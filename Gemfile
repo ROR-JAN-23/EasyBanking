@@ -71,7 +71,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
+gem 'byebug', '~> 11.1', '>= 11.1.3'
 gem 'dotenv-rails'
 gem 'sassc-rails'
 gem 'bootstrap'
