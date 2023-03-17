@@ -36,13 +36,15 @@ li a:hover:not(.active) {
 </style>
 </head>
 <body>
+<% if user_signed_in? %>
 <% if current_user.role=="admin" %>
 <ul>
   <li><a href="#Deposit">Deposit</a></li>
   <li><a href="#Withdraw">Withdraw</a></li>
   <li><a href="#Transfer_Money">Transfer Money</a></li>
   <li><a href="#Notification">Notification</a></li>
-  <li><a href="#Balance_inquiry">Balance Inquiry</a></li>
+  <li><a href="/accounts/balance/action">Balance Inquiry</a></li>
+  <li><a href="/users">Verification Request</a></li>
   <li style="float:right"><a href="#Hi">Hi Admin</a></li>
 </ul>
 <% end %>
@@ -52,9 +54,10 @@ li a:hover:not(.active) {
   <li><a href="#Transfer_Money">Transfer Money</a></li>
   <li><a href="#Transaction_history">Transaction History</a></li>
   <li><a href="#Notification">Notification</a></li>
-  <li><a href="#Balance_inquiry">Balance Inquiry</a></li>
+  <li><a href="/accounts/balance/action">Balance Inquiry</a></li>
   <li style="float:right"><a href="#Hi">Hi User</a></li>
 </ul>
+<% end %>
 <% end %>
 </body>
 </html>
@@ -64,9 +67,8 @@ li a:hover:not(.active) {
 
 
 
-
-<div class="text-center" >
-  <h1>EASYBANKING</h1>
+<div class="text-center"  >
+<h1>EASYBANKING</h1>
 
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.

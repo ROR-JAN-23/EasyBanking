@@ -1,0 +1,34 @@
+<style>
+h1 {
+  text-align: center;
+}
+</style>
+
+<h1>Transfer Amount</h1>
+<%= form_with url:"/accounts/transfer_money/action", method: :post do |form|  %>
+  <div class="mb-1">
+    <%= form.label :sender_ac, "Sender's Account No:" ,class:"form-label"%>
+    <%= form.number_field :sender_ac,class:"form-control"%>
+  </div>
+  <div class="mb-1">
+    <%= form.label :sender_name, "Sender's Name:" ,class:"form-label"%>
+    <%= form.text_field :sender_name ,class:"form-control"%>
+  </div>
+  <div class="mb-1">
+    <%= form.label :amount,"Amount" ,class:"form-label"%>
+    <%= form.number_field :amount ,class:"form-control"%>
+  </div>
+  <div class="mb-1">
+    <%= form.label :receiver_ac, "Receiver's Account No:" ,class:"form-label"%>
+    <%= form.number_field  :receiver_ac ,class:"form-control"%>
+  </div>
+  <div class="mb-1">
+    <%= form.label  :receiver_name, "Receiver's Name:" ,class:"form-label"%>
+    <%= form.text_field  :receiver_name ,class:"form-control"%>
+  </div>
+    <%= form.submit "Transfer" ,class:"btn btn-primary"%>
+ 
+</form>
+<% end %>
+
+

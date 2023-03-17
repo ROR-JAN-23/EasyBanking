@@ -1,0 +1,22 @@
+<h2>Unverified Accounts</h2>
+
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Account Type</th>
+    <th>Is verified?</th>
+    <th>Verify</th>
+  </tr>
+<% @user.each do |user| %>
+  <tr>
+    <td><%= user.first_name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.account_type %></td>
+    <td><%= user.verified %></td>
+    <td><%= link_to "verify",users_verfied_user_action_path(id: user.id) %></td>
+  </tr>
+<% end %>
+</table>
+
